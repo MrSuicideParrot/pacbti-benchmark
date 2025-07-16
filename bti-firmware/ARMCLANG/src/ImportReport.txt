@@ -1,0 +1,18 @@
+Import of MDK uVision project 'Blinky' for the target 'ARMCLANG'
+
+Source
+  Example                     : Blinky (V2M-MPS3-SSE-310)
+  Location                    : /home/acirne/.cache/arm/packs/ARM/V2M_MPS3_SSE_310_BSP/1.2.0/Examples/Blinky/Blinky.uvprojx
+  Target Name                 : ARMCLANG
+  Arm Compiler version        : Arm Compiler 6
+
+Destination
+  DS Workspace                : /home/acirne/developmentstudio-workspace
+  Project Name                : Blinky (V2M-MPS3-SSE-310)_ARMCLANG
+  Location                    : /home/acirne/developmentstudio-workspace/Blinky (V2M-MPS3-SSE-310)_ARMCLANG
+  Toolchain                   : Arm Compiler for Embedded 6
+
+A COPY of the project files has been made with no changes to any files in the 'Source Location'.
+The import only covers aspects of the project build and not debug configuration settings.
+
+--- End of ImportReport.txt ---

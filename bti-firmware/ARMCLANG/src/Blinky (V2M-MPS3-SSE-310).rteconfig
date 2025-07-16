@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <packages/>
+  <device Dclock="25000000" Dcore="Cortex-M85" DcoreVersion="r0p0" Ddsp="DSP" Dendian="Little-endian" Dfpu="DP_FPU" Dmpu="MPU" Dmve="FP_MVE" Dname="SSE-310-MPS3_FVP" Dpacbti="PACBTI" Dsecure="0" Dtz="TZ" Dvendor="ARM:82">
+    <package info="ARM V2M-MPS3 Board Support PACK for CoreLink SSE-310 - TrustZone enabled subsystem for embedded." name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+  </device>
+  <toolchain Tcompiler="ARMCC" Toptions="AC6" Toutput="exe"/>
+  <components>
+    <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.6.0">
+      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+      <file category="doc" name="CMSIS/Documentation/Core/html/index.html"/>
+      <file category="include" name="CMSIS/Core/Include/"/>
+      <file category="header" condition="TrustZone" name="CMSIS/Core/Include/tz_context.h"/>
+    </component>
+    <component Capiversion="2.2.0" Cclass="CMSIS Driver" Cgroup="I2C" Cvendor="ARM" Cversion="1.0.1" deviceDependent="1" maxInstances="4">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="include" deviceDependent="1" name="CMSIS_Driver/Config/"/>
+      <file category="source" deviceDependent="1" name="CMSIS_Driver/Driver_I2C.c"/>
+    </component>
+    <component Cclass="CMSIS Driver" Cgroup="MPC" Cvendor="ARM" Cversion="1.1.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="include" deviceDependent="1" name="CMSIS_Driver/Config/"/>
+      <file category="include" deviceDependent="1" name="CMSIS_Driver/Include/"/>
+      <file category="header" deviceDependent="1" name="CMSIS_Driver/Driver_MPC.h"/>
+      <file category="source" deviceDependent="1" name="CMSIS_Driver/Driver_MPC.c"/>
+    </component>
+    <component Cclass="CMSIS Driver" Cgroup="PPC" Cvendor="ARM" Cversion="1.1.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="include" deviceDependent="1" name="CMSIS_Driver/Config/"/>
+      <file category="include" deviceDependent="1" name="CMSIS_Driver/Include/"/>
+      <file category="header" deviceDependent="1" name="CMSIS_Driver/Driver_PPC.h"/>
+      <file category="source" deviceDependent="1" name="CMSIS_Driver/Driver_PPC.c"/>
+      <file category="header" deviceDependent="1" name="CMSIS_Driver/Driver_PPC_Common.h"/>
+    </component>
+    <component Capiversion="2.2.0" Cclass="CMSIS Driver" Cgroup="SPI" Cvendor="ARM" Cversion="1.0.1" deviceDependent="1" maxInstances="5">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="include" deviceDependent="1" name="CMSIS_Driver/Config/"/>
+      <file category="source" deviceDependent="1" name="CMSIS_Driver/Driver_SPI.c"/>
+    </component>
+    <component Capiversion="2.2.0" Cclass="CMSIS Driver" Cgroup="USART" Cvendor="ARM" Cversion="1.1.0" deviceDependent="1" instances="2" maxInstances="5">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="include" deviceDependent="1" name="CMSIS_Driver/Config/"/>
+      <file category="header" deviceDependent="1" name="CMSIS_Driver/Driver_USART_Common.h"/>
+      <file category="header" deviceDependent="1" name="CMSIS_Driver/Driver_USART_CMSDK.h"/>
+      <file category="source" deviceDependent="1" name="CMSIS_Driver/Driver_USART.c"/>
+    </component>
+    <component Cbundle="ARM Compiler" Cbundleversion="1.7.2" Cclass="Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="User" Cvendor="Keil" Cversion="1.2.0">
+      <package name="ARM_Compiler" url="https://www.keil.com/pack/" vendor="Keil" version="1.7.2"/>
+      <file category="source" name="Source/retarget_io.c"/>
+      <file attr="template" category="source" name="Template/stdout_user.c" select="STDOUT User Template"/>
+      <file attr="template" category="source" name="Template/stdout_USART.c" select="STDOUT via USART"/>
+      <file attr="template" category="source" name="Template/stdout_display.c" select="STDOUT via Display"/>
+    </component>
+    <component Cclass="Device" Cgroup="Definition" Cvendor="ARM" Cversion="1.2.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="include" deviceDependent="1" name="Device/Include/"/>
+      <file category="include" deviceDependent="1" name="Native_Driver/"/>
+      <file category="include" deviceDependent="1" name="Board/Platform/"/>
+      <file category="header" deviceDependent="1" name="Board/Platform/platform_base_address.h" version="1.0.0"/>
+      <file category="header" deviceDependent="1" name="Board/Platform/platform_description.h" version="1.0.0"/>
+      <file category="header" deviceDependent="1" name="Board/Device_Definition/device_definition.h" version="1.1.2"/>
+      <file category="source" deviceDependent="1" name="Board/Device_Definition/device_definition.c" version="1.1.2"/>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cvariant="Baremetal" Cvendor="ARM" Cversion="1.2.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file attr="config" category="header" deviceDependent="1" name="Device/Include/region_defs.h" version="1.0.0"/>
+      <file attr="config" category="header" deviceDependent="1" name="Device/Include/region_limits.h" version="1.0.0"/>
+      <file attr="config" category="linkerScript" condition="ARMCC6" deviceDependent="1" name="Device/Source/armclang/corstone310_mps3_s.sct" version="1.0.0"/>
+      <file category="source" deviceDependent="1" name="Device/Source/startup_SSE310MPS3.c" version="1.1.0"/>
+      <file category="source" deviceDependent="1" name="Device/Source/system_SSE310MPS3.c" version="1.1.0"/>
+      <file category="header" deviceDependent="1" name="Device/Include/system_SSE310MPS3.h" version="1.0.0"/>
+      <file attr="config" category="header" deviceDependent="1" name="Device/Config/Baremetal/device_cfg.h" version="1.0.0"/>
+      <file attr="config" category="header" deviceDependent="1" name="CMSIS_Driver/Config/Baremetal/cmsis_driver_config.h" version="1.0.0"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="Audio I2S" Cvendor="ARM" Cversion="1.0.1" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/audio_i2s_mps3_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/audio_i2s_mps3_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/audio_i2s_mps3_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="I2C SBCon" Cvendor="ARM" Cversion="1.0.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/i2c_sbcon_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/i2c_sbcon_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/i2c_sbcon_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="IO" Cvendor="ARM" Cversion="1.0.1" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/arm_mps3_io_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/arm_mps3_io_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/arm_mps3_io_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="MPC" Cvendor="ARM" Cversion="1.1.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/mpc_sie_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/mpc_sie_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/mpc_sie_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="PPC" Cvendor="ARM" Cversion="1.1.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/ppc_corstone310_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/ppc_corstone310_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/ppc_corstone310_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="SPI" Cvendor="ARM" Cversion="1.0.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/spi_pl022_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/spi_pl022_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/spi_pl022_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="SysCounter" Cvendor="ARM" Cversion="1.0.1" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/syscounter_armv8-m_cntrl_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/syscounter_armv8-m_cntrl_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/syscounter_armv8-m_cntrl_reg_map.h"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/syscounter_armv8-m_read_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/syscounter_armv8-m_read_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/syscounter_armv8-m_read_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="SysTimer" Cvendor="ARM" Cversion="1.0.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/systimer_armv8-m_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/systimer_armv8-m_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/systimer_armv8-m_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="Timeout" Cvendor="ARM" Cversion="1.0.1" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/systimer_armv8-m_timeout.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/timeout.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="UART" Cvendor="ARM" Cversion="1.1.0" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/uart_cmsdk_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/uart_cmsdk_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/uart_cmsdk_reg_map.h"/>
+    </component>
+    <component Cclass="Native Driver" Cgroup="Watchdog" Cvendor="ARM" Cversion="1.0.1" deviceDependent="1">
+      <package name="V2M_MPS3_SSE_310_BSP" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
+      <file category="source" deviceDependent="1" name="Native_Driver/syswdog_armv8-m_drv.c"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/syswdog_armv8-m_drv.h"/>
+      <file category="header" deviceDependent="1" name="Native_Driver/syswdog_armv8-m_reg_map.h"/>
+    </component>
+  </components>
+  <apis>
+    <api Capiversion="2.3.0" Cclass="CMSIS Driver" Cgroup="SPI" Cvendor="ARM" Cversion="2.3.0" exclusive="0">
+      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+      <file category="doc" name="CMSIS/Documentation/Driver/html/group__spi__interface__gr.html"/>
+      <file category="header" name="CMSIS/Driver/Include/Driver_SPI.h"/>
+    </api>
+    <api Capiversion="2.4.0" Cclass="CMSIS Driver" Cgroup="I2C" Cvendor="ARM" Cversion="2.4.0" exclusive="0">
+      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+      <file category="doc" name="CMSIS/Documentation/Driver/html/group__i2c__interface__gr.html"/>
+      <file category="header" name="CMSIS/Driver/Include/Driver_I2C.h"/>
+    </api>
+    <api Capiversion="2.4.0" Cclass="CMSIS Driver" Cgroup="USART" Cvendor="ARM" Cversion="2.4.0" exclusive="0">
+      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+      <file category="doc" name="CMSIS/Documentation/Driver/html/group__usart__interface__gr.html"/>
+      <file category="header" name="CMSIS/Driver/Include/Driver_USART.h"/>
+    </api>
+  </apis>
+</configuration>
